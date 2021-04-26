@@ -1,14 +1,45 @@
 # custom_switch
 
-A new Flutter package.
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+  final String title;
 
-## Getting Started
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+class _MyHomePageState extends State<MyHomePage> {
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+  bool status = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Custom Switch'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            CustomSwitch(
+              activeColor: Colors.blueAccent,
+              value: status,
+              onChanged: (value) {
+                print("VALUE : $value");
+                setState(() {
+                  status = value;
+                });
+              },
+            ),
+            SizedBox(height: 12.0,),
+            Text('Value : $status', style: TextStyle(
+                color: Colors.black,
+                fontSize: 20.0
+            ),)
+          ],
+        ),
+      ),
+    );
+  }
+}
