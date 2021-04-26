@@ -2,7 +2,7 @@ name: custom_switch
 description: A custom switch Flutter package.
 version: 0.0.1
 author: Vincent Agbo <agbovincent100@gmail.com>
-homepage: https://github.com/AgboVincent/
+homepage: https://github.com/AgboVincent/customswitch
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
